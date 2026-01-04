@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Web Worker</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      textarea {
+        width: 100%;
+        min-height: 130px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
+        padding: 10px;
+      }
+      input {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <a class="btn" href="../index.html">← Înapoi</a>
+          <span class="badge">Web Worker</span>
+        </div>
+        <h1>Web Worker – numere prime</h1>
+        <p>Calculează numere prime până la N, fără să blocheze UI-ul.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div class="row">
+          <label class="badge">N</label>
+          <input id="n" type="number" value="200000" min="1000" step="1000" />
+          <button class="btn" id="start">Start</button>
+          <button class="btn" id="stop">Stop</button>
+          <span class="badge" id="progress">Idle</span>
+        </div>
+
+        <hr />
+        <h2>Rezultat</h2>
+        <textarea id="out" readonly></textarea>
+      </section>
+    </main>
+
+    <script src="../js/worker-page.js"></script>
+  </body>
+</html>

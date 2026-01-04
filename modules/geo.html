@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Geolocation + History</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      .box {
+        padding: 12px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .k {
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <a class="btn" href="../index.html">← Înapoi</a>
+          <span class="badge">Geolocation + History</span>
+        </div>
+        <h1>Geolocation + History (pushState)</h1>
+        <p>
+          Cere locația (dacă permiți), apoi salvează coordonatele în URL (fără
+          refresh) cu <code>history.pushState</code>.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div class="row">
+          <button class="btn" id="getLoc">Ia locația</button>
+          <button class="btn" id="clearState">Curăță URL</button>
+          <span class="badge" id="st">Idle</span>
+        </div>
+
+        <div class="box" style="margin-top: 12px">
+          <div><span class="k">Lat:</span> <span id="lat">-</span></div>
+          <div><span class="k">Lng:</span> <span id="lng">-</span></div>
+          <div><span class="k">Accuracy:</span> <span id="acc">-</span></div>
+          <div style="margin-top: 8px">
+            <a id="map" class="btn" href="#" target="_blank" rel="noreferrer"
+              >Deschide harta</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/geo.js"></script>
+  </body>
+</html>

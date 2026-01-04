@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Canvas 2D</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <a class="btn" href="../index.html">← Înapoi</a>
+          <span class="badge">Canvas 2D</span>
+        </div>
+        <h1>Canvas 2D – desen & interacțiune</h1>
+        <p>
+          Click pe obiecte pentru selectare, trage pentru mutare, exportă
+          imaginea ca PNG.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="row">
+        <button class="btn" id="btnAddCircle">Adaugă cerc</button>
+        <button class="btn" id="btnAddRect">Adaugă dreptunghi</button>
+        <button class="btn" id="btnClear">Curăță</button>
+        <button class="btn" id="btnExport">Export PNG</button>
+        <span id="status" class="badge"></span>
+      </div>
+
+      <div class="canvas-wrap" style="margin-top: 12px">
+        <canvas id="c2d" width="1066" height="520"></canvas>
+      </div>
+    </main>
+
+    <script src="../js/canvas2d.js"></script>
+  </body>
+</html>

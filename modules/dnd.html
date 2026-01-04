@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Drag & Drop</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      .palette {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      .item {
+        width: 110px;
+        height: 64px;
+        border-radius: 12px;
+        border: 1px dashed rgba(255, 255, 255, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.04);
+        cursor: grab;
+        user-select: none;
+      }
+      .dropzone {
+        padding: 10px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .hint {
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <a class="btn" href="../index.html">← Înapoi</a>
+          <span class="badge">Drag & Drop</span>
+        </div>
+        <h1>Drag & Drop – paletă → canvas</h1>
+        <p>
+          Trage un element din paletă în zona de desen. Se adaugă pe canvas unde
+          ai dat drumul.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Paletă (draggable)</h2>
+        <div class="palette">
+          <div class="item" draggable="true" data-kind="circle">Cerc</div>
+          <div class="item" draggable="true" data-kind="rect">Dreptunghi</div>
+          <div class="item" draggable="true" data-kind="img">Imagine</div>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top: 14px">
+        <h2>Drop zone</h2>
+        <div class="dropzone">
+          <div class="canvas-wrap">
+            <canvas id="dndCanvas" width="1016" height="520"></canvas>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: 10px">
+          <button class="btn" id="btnUndo">Undo</button>
+          <button class="btn" id="btnClear">Clear</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/dnd.js"></script>
+  </body>
+</html>

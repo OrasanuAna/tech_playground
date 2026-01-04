@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ContentEditable</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      .toolbar {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 10px 0;
+      }
+      .editor {
+        min-height: 260px;
+        padding: 12px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.03);
+        outline: none;
+      }
+      .editor:focus {
+        border-color: rgba(124, 92, 255, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <a class="btn" href="../index.html">← Înapoi</a>
+          <span class="badge">ContentEditable</span>
+        </div>
+        <h1>ContentEditable – mini editor</h1>
+        <p>
+          Text editabil în pagină + comenzi (bold/italic/link) + salvare în
+          LocalStorage.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Toolbar</h2>
+        <div class="toolbar">
+          <button class="btn" data-cmd="bold"><b>B</b></button>
+          <button class="btn" data-cmd="italic"><i>I</i></button>
+          <button class="btn" data-cmd="underline"><u>U</u></button>
+          <button class="btn" id="btnLink">Link</button>
+          <button class="btn" id="btnH2">H2</button>
+          <button class="btn" id="btnUl">Listă</button>
+          <button class="btn" id="btnSave">Salvează</button>
+          <button class="btn" id="btnReset">Reset</button>
+          <span class="badge" id="saved"></span>
+        </div>
+
+        <div
+          id="editor"
+          class="editor"
+          contenteditable="true"
+          spellcheck="true"
+        >
+          <h2>Notițe</h2>
+          <p>Scrie aici. Selectează un text și apasă pe butoane.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/editor.js"></script>
+  </body>
+</html>

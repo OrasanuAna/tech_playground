@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Multimedia</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      video,
+      audio {
+        width: 100%;
+        max-width: 980px;
+      }
+      .player {
+        display: grid;
+        gap: 10px;
+      }
+      .list {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <a class="btn" href="../index.html">← Înapoi</a>
+          <span class="badge">Audio / Video</span>
+        </div>
+        <h1>Multimedia – audio și video</h1>
+        <p>
+          Redare multimedia folosind elementele HTML5 &lt;audio&gt; și
+          &lt;video&gt;.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- VIDEO -->
+      <section class="card player">
+        <h2>Video (MP4)</h2>
+        <video id="video" controls preload="metadata">
+          <source src="../assets/media/video.mp4" type="video/mp4" />
+          Browserul nu suportă redare video.
+        </video>
+
+        <div class="row">
+          <button class="btn" id="vPlay">Play / Pause</button>
+          <button class="btn" id="vBack">-5s</button>
+          <button class="btn" id="vFwd">+5s</button>
+          <span class="badge" id="vTime"></span>
+        </div>
+      </section>
+
+      <!-- AUDIO -->
+      <section class="card player" style="margin-top: 14px">
+        <h2>Audio (MP3)</h2>
+        <audio id="audio" controls preload="metadata">
+          <source src="../assets/media/audio.mp3" type="audio/mpeg" />
+          Browserul nu suportă redare audio.
+        </audio>
+
+        <div class="list">
+          <button class="btn" data-seek="0">Start</button>
+          <button class="btn" data-seek="15">+15s</button>
+          <button class="btn" data-seek="30">+30s</button>
+          <button class="btn" id="aVolDown">Vol -</button>
+          <button class="btn" id="aVolUp">Vol +</button>
+          <span class="badge" id="aInfo"></span>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/media.js"></script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SVG</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      svg {
+        width: 100%;
+        max-width: 980px;
+        height: auto;
+      }
+      .hot {
+        cursor: pointer;
+      }
+      .selected {
+        filter: drop-shadow(0 0 10px rgba(124, 92, 255, 0.8));
+        stroke: white;
+        stroke-width: 3;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      #gear {
+        transform-origin: 420px 170px;
+        animation: spin 6s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <a class="btn" href="../index.html">← Înapoi</a>
+          <span class="badge">SVG</span>
+        </div>
+        <h1>SVG – desen & interacțiune</h1>
+        <p>
+          SVG inline: forme, path, text pe path, animație, click pe elemente.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div class="row">
+          <span class="badge" id="msg">Click pe un element din SVG</span>
+        </div>
+
+        <div style="margin-top: 12px">
+          <svg
+            viewBox="0 0 980 420"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Demo SVG"
+          >
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#7c5cff" />
+                <stop offset="1" stop-color="#00ffaa" />
+              </linearGradient>
+
+              <path id="curve" d="M 60 330 C 240 120, 520 120, 920 330" />
+            </defs>
+
+            <rect
+              class="hot"
+              id="panel"
+              x="40"
+              y="40"
+              rx="18"
+              ry="18"
+              width="360"
+              height="260"
+              fill="rgba(255,255,255,.05)"
+              stroke="rgba(255,255,255,.14)"
+            />
+            <circle
+              class="hot"
+              id="planet"
+              cx="220"
+              cy="170"
+              r="78"
+              fill="url(#g1)"
+            />
+            <circle cx="250" cy="145" r="14" fill="rgba(255,255,255,.55)" />
+
+            <g id="gear" class="hot">
+              <circle
+                cx="420"
+                cy="170"
+                r="52"
+                fill="rgba(124,92,255,.25)"
+                stroke="rgba(124,92,255,.8)"
+                stroke-width="6"
+              />
+              <circle cx="420" cy="170" r="18" fill="rgba(0,0,0,.35)" />
+              <rect
+                x="413"
+                y="98"
+                width="14"
+                height="28"
+                fill="rgba(124,92,255,.8)"
+              />
+              <rect
+                x="413"
+                y="214"
+                width="14"
+                height="28"
+                fill="rgba(124,92,255,.8)"
+              />
+              <rect
+                x="348"
+                y="163"
+                width="28"
+                height="14"
+                fill="rgba(124,92,255,.8)"
+              />
+              <rect
+                x="464"
+                y="163"
+                width="28"
+                height="14"
+                fill="rgba(124,92,255,.8)"
+              />
+            </g>
+
+            <text font-size="22" fill="rgba(255,255,255,.9)">
+              <textPath href="#curve" startOffset="5%">
+                SVG este vectorial, scalabil și ușor de animat + controlat prin
+                DOM ✨
+              </textPath>
+            </text>
+
+            <path
+              d="M 60 330 C 240 120, 520 120, 920 330"
+              fill="none"
+              stroke="rgba(255,255,255,.12)"
+              stroke-width="3"
+            />
+          </svg>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/svg.js"></script>
+  </body>
+</html>
