@@ -14,18 +14,10 @@ Acest mini-proiect adună într-un singur loc **câte un exemplu funcțional** p
 ## Cum rulezi
 1. Deschide folderul în VS Code
 2. Rulează cu **Live Server** (sau `npx http-server`)  
-   ⚠️ Workers și unele API-uri nu merg din `file://`.
 
 ## Structură
 - `index.html` – meniu către demo-uri
-- `css/styles.css` – stiluri simple
+- `css/styles.css` – stiluri
 - `modules/*.html` – pagini demo
 - `js/*.js` – logica pentru fiecare demo
 - `assets/` – imagini + media
-- `sse/sse_script.php` – server SSE (PHP)
-
-## Mapare către laboratoare (orientativ)
-- Lab 1: Canvas 2D + exemple de desen
-- Lab 2: Drag&Drop + contenteditable + history
-- Lab 3: Multimedia + localStorage + SVG
-- Lab 4: Geolocation + WebWorkers + SSE
